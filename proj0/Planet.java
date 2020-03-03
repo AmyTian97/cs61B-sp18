@@ -1,5 +1,5 @@
 public class Planet {
-	final static double G = 6.67e-11;
+	private final static double G = 6.67e-11;
 	// final static: create a CONSTANT; must initialize before class loading
 	public double xxPos;
 	public double yyPos;
