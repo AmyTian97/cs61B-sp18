@@ -6,14 +6,14 @@ public class ArrayDeque<T> {
 
     /** Creates an empty array deque. */
     public ArrayDeque() {
-        items = (T[]) new Object[2];
+        items = (T[]) new Object[8];
         nextFirst = 0;
         nextLast = 1;
         size = 0;
     }
 
     /** Resizes the array */
-    public void resize(int capacity) {
+    private void resize(int capacity) {
         T[] ad = (T[]) new Object[capacity];
         if (nextFirst < nextLast) {
             System.arraycopy(items, 0, ad, 0, size - nextFirst);
