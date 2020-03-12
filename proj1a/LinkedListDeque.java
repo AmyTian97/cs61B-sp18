@@ -13,6 +13,8 @@ public class LinkedListDeque<T> {
         public T getRecHelper(int index) {
             if (index == 0) {
                 return item;
+            } else if (next==null){
+                return null;
             } else {
                 return this.next.getRecHelper(index - 1);
             }
@@ -56,11 +58,7 @@ public class LinkedListDeque<T> {
 
     /** Returns true if deque is empty, false otherwise. */
     public boolean isEmpty() {
-        if (size == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return size == 0;
     }
 
     /** Returns the number of items in the deque. */
@@ -115,7 +113,7 @@ public class LinkedListDeque<T> {
     public T get(int index) {
         if (index >= size) {
             return null;
-        } else{
+        } else {
             ListNode p = sentinel.next;
             int i = 0;
             while (i < index) {
@@ -128,11 +126,7 @@ public class LinkedListDeque<T> {
 
     /** Same as get, but uses recursion. */
     public T getRecursive(int index) {
-        if (index >= size) {
-            return null;
-        } else {
-            return sentinel.next.getRecHelper(index);
-        }
+        return sentinel.next.getRecHelper(index);
     }
 
 }
