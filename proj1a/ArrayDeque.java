@@ -7,8 +7,8 @@ public class ArrayDeque<T> {
     /** Creates an empty array deque. */
     public ArrayDeque() {
         items = (T[]) new Object[8];
-        nextFirst = 0;
-        nextLast = 1;
+        nextFirst = 7;
+        nextLast = 0;
         size = 0;
     }
 
