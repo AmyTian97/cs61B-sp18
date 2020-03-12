@@ -35,7 +35,7 @@ public class ArrayDeque<T> {
         }
         items[nextFirst] = x;
         if (nextFirst == 0) {
-            nextFirst  = items.length - 1;
+            nextFirst = items.length - 1;
         } else {
             nextFirst -= 1;
         }
@@ -129,7 +129,11 @@ public class ArrayDeque<T> {
                 return null;
             }
         } else {
-            return null;
+            if (index != nextFirst) {
+                return items[index];
+            } else {
+                return null;
+            }
         }
     }
 
