@@ -28,6 +28,7 @@ public class ArrayDeque<T> {
         }
     }
 
+
     /** Adds an item of type T to the front of the deque. */
     public void addFirst(T x) {
         if (size == items.length) {
@@ -55,6 +56,7 @@ public class ArrayDeque<T> {
         }
         size = size + 1;
     }
+
 
     /** Returns true if deque is empty, false otherwise. */
     public boolean isEmpty() {
@@ -115,29 +117,7 @@ public class ArrayDeque<T> {
     /** Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth.
      * If no such item exists, returns null. Must not alter the deque! */
     public T get(int index) {
-        if (nextFirst < nextLast) {
-            if (index < nextFirst || index > nextLast) {
-                return items[index];
-            } else {
-                return null;
-            }
-        }
-        else if (nextFirst > nextLast) {
-            if (index > nextFirst || index < nextLast) {
-                return items[index];
-            } else {
-                return null;
-            }
-        } else {
-            if (index != nextFirst) {
-                return items[index];
-            } else {
-                return null;
-            }
-        }
+        return items[index]; // In generic class, no matter what element type, all initialized to null.
     }
-
-
-
 
 }
